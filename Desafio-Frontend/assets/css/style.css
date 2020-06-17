@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+body{
+	background-color: #f8f8f8;
+	color: #212121;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/* -------------- HEADER TOP ----------------*/
+.bg-light {
+	background: #fff !important;
+	box-shadow: 0 2px 7.7px .3px rgba(0,0,0,.1) !important;
+}
+.sticky-top {
+	position: fixed;
+	top: 0;
+	z-index: 1020;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0 25px;
+	width: 100%;
+}
+.header-left{
+	width: 260px;
+	text-align: center;
+}
+.header-left img{
+	width: 70%;
+}
+.header-right{
+	padding-right: 35px;
+}
+.header-right .dropdown .dropdown-toggle{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 175px;
+}
+.header-right .dropdown .dropdown-menu{
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	width: 175px;
+	background: #fff;
+	top: 50px;
+}
+.header-right .dropdown .dropdown-menu span{
+	display: block;
+	float: left;
+}
+.header-right .dropdown .dropdown-menu a:hover,
+.header-right .dropdown .dropdown-menu a:focus{
+	background: #fff;
+}
+
+/* -------------- SIDE MENU ----------------*/
+.side-menu{
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.16);
+	background: #fff;
+	height: 100%;
+	width: 100%;
+	transition: all .3s ease-in-out;
+	padding-top: 85px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	max-width: 280px;
+	z-index: 999;
+}
+
+.side-menu .nav-menu{
+	padding: 10px;
+}
+.icon-home{
+	background-image: url(../img/icons/home.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.side-menu .nav-menu li.active .icon-home,
+.side-menu .nav-menu li:hover .icon-home{
+	background-image: url(../img/icons/home-hover.svg);
+}
+.icon-users{
+	background-image: url(../img/icons/users.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.side-menu .nav-menu li.active .icon-users,
+.side-menu .nav-menu li:hover .icon-users{
+	background-image: url(../img/icons/users-hover.svg);
+}
+.side-menu .nav-menu li{
+	border-radius: 5px;
+	margin-bottom: 5px;
+	position: relative;
+}
+.icon-chevron{
+	background-image: url(../img/icons/chevron-down.svg);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 10px;
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+.side-menu .nav-menu li.active .icon-chevron,
+.side-menu .nav-menu li:hover .icon-chevron{
+	background-image: url(../img/icons/chevron-down-hover.svg);
+}
+.icon-cloud{
+	background-image: url(../img/icons/cloud.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.side-menu .nav-menu li.active .icon-cloud,
+.side-menu .nav-menu li:hover .icon-cloud{
+	background-image: url(../img/icons/cloud-hover.svg);
+}
+.icon-logout{
+	background-image: url(../img/icons/log-out.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.side-menu .nav-menu li.active .icon-logout,
+.side-menu .nav-menu li:hover .icon-logout{
+	background-image: url(../img/icons/log-out-hover.svg);
+	
+}
+.icon-delete{
+	background-image: url(../img/icons/delete.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.icon-file{
+	background-image: url(../img/icons/file.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.icon-menu{
+	background-image: url(../img/icons/menu.svg);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+}
+.side-menu .nav-menu li {
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.side-menu .nav-menu li a{
+	display: flex;
+	align-items: center;
+	color: #212121;
+}
+.side-menu .nav-menu li.active a,
+.side-menu .nav-menu li:hover a{
+	color: #d40000;
+	background: #f9f9f9;
+}
+.side-menu .nav-submenu li{
+	padding-left: 20px;
+}
+.side-menu .nav-menu li:hover,
+.collapse.show .nav-submenu li {
+	background: #f9f9f9;
+}
+.side-menu .nav-submenu li a{
+	color: #212121 !important;
+}
+.side-menu .nav-submenu li a:hover,
+.side-menu .nav-submenu li.active a{
+	color: #d40000 !important;
+}
+.side-menu .nav-submenu li a:before{
+	content: '';
+	display: block;
+	width: 4px;
+	height: 19px;
+	border-radius: 2px;
+	background-color: transparent;
+	margin-right: 10px;
+}
+.side-menu .nav-submenu li:hover a:before,
+.side-menu .nav-submenu li.active a:before{
+	background-color: #d40000;
+}
+.rotate{
+	transform: rotate(180deg);
+}
+#gerenciar, #enviar-arquivo {
+	display: none;
+}
+#listaFuncionarios thead tr th,
+#listaFuncionarios thead tr td{
+	width: 16.6%;
+}
+
+
+/* -------------- CONTENT DASHBOARD ----------------*/
+main.container-fluid{
+	padding-left: 295px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.content-dashboard{
+	background: #fff;
+	padding: 20px 30px;
+	border-radius: 10px;
+	margin-top: 100px;
+}
+.content-dashboard .table{
+	margin: 0;
+}
+.content-dashboard .table thead th{
+	border-top: none;
+}
+
+
+/* -------------- GERENCIAR FUNCIONÁRIOS ----------------*/
+.btn-cadastrar {
+	background: #d40000;
+	color: #fff;
+	width: 100%;
+	transition: all 0.5s;
+}
+.btn-cadastrar:focus {
+	outline: none;
+	box-shadow: none;
+}
+.btn-cadastrar:hover {
+	opacity: 0.8;
+	color: #fff;
+}
+.add-employee form input:focus{
+	box-shadow: none;
+	outline: none;
+	border:1px solid #d40000;
+}
+
+
+/* -------------- ENVIAR ARQUIVOS ----------------*/
+input[type="file"]{
+	opacity: 0;
+	cursor: pointer;
+	width: 100%;
+}
+#fileup .box-file{
+	border-radius: 5px;
+	border: 2px solid #ddd;
+	border-style: dashed;
+	text-align: center;
+	padding: 30px;
+	cursor: pointer;
+	width: 100%;
+}
+#fileup .box-file:hover{
+	border-color: #ccc;
+	background: #f9f9f9;
+}
+#fileup .box-file img {
+	width: 120px;
+}
+#fileup .box-file span{
+	font-size: 22px;
+	color: #aaa;
+	cursor: pointer;
+}
+.file-resume{
+	box-shadow: 0px 2px 6px 2px #eee;
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 20px;
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+.file-resume div{
+	display: flex;
+}
+
+@media (max-width: 992px){
+	main.container-fluid{
+		padding-left: 0;
+		padding-right: 0;
+		min-height: 85vh;
+	}
+	.sticky-top{
+		padding: 13px 15px 15px;
+
+	}
+	.header-left{
+		width: 230px;
+		text-align: left;
+	}
+	.header-right{
+		display: none;
+	}
+	.navbar-toggler{
+		position: absolute;
+		padding: 0;
+		border: none;
+		right: 15px;
+		top: 15px;
+	}
+	.navbar-toggler:focus{
+		outline: none;
+		box-shadow: none;
+	}
+	.side-menu{
+		left: -285px;
+		padding-top: 56px;
+	}
+	.show-menu{
+		left: 0;
+	}
+	.user-mobile {
+		display: flex;
+		justify-content: center;
+		padding: 12px 0;
+		border-bottom: 1px solid #eee;
+	}
+	.user-mobile img{
+		margin-right: 10px;
+	}
+	.side-menu .nav-submenu li{
+		padding-left: 0;
+	}
+	.side-menu .nav-submenu li a{
+		padding-left: 34px;
+	}
+	.content-dashboard{
+		padding: 15px;
+		margin-top: 72px;
+	}
+	#listaFuncionarios thead tr th, 
+	#listaFuncionarios thead tr td,
+	#listaFuncionariosHome thead tr th, 
+	#listaFuncionariosHome thead tr td{
+		white-space: nowrap;
+	}
+
+}
+
+@media (max-width: 576px){
+	h3 {
+		font-size: 22px;
+	}
+	h5 {
+		font-size: 17px;
+	}
+	.file-resume p {
+		font-size: 12px;
+		margin-top: 4px;
+		margin-bottom: 0;
+	}
+	.file-resume p.name-file{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 170px;
+		height: 20px;
+	}
+}
+
+
+
