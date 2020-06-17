@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio Frontend</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        var fake = JSON.stringify({
+            Nome: "Jose",
+            Sobrenome: "Silva",
+            Cargo: "Coordenador",
+            Setor: "Adm",
+            TempoEmpresa: '2 anos'
+        });
+
+        Fakes = []
+
+        for (var i = 0; i< 50; i++) {
+            Fakes.push(fake)[i];
+            localStorage.setItem("Funcionarios", JSON.stringify(Fakes));
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+            <div class="header-left">
+                <a class="logo" href="index.html">
+                    <img src="assets/img/logotipo.svg" alt="logo" title="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/img/icons/user.svg" alt="user" title="user">
+                        <span>Evandro Gouveia</span>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#"> <span class="icon-logout"></span>  Sair</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <nav class="side-menu">
+        <div class="side-menu-inner">
+            <div class="user-mobile d-lg-none">
+             <img src="assets/img/icons/user.svg" alt="user" title="user">
+             <span>Evandro Gouveia</span>
+         </div>
+         <ul class="nav nav-menu flex-column">
+            <li class="nav-item active">
+                <a href="#home" class="nav-link">
+                    <span class="icon-home"></span> Home
+                </a>
+            </li>
+
+            <li class="nav-collapse">
+                <a data-toggle="collapse" href="#collapse-menu" class="nav-link" role="button" aria-expanded="false" aria-controls="collapse-menu">
+                    <span class="icon-users"></span>  Funcionários
+                </a>
+
+                <div class="collapse multi-collapse" id="collapse-menu">
+                    <ul class="nav nav-submenu flex-column">
+                        <li>
+                            <a href="#gerenciar" class="nav-link">Gerenciar</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <span class="icon-chevron"></span>
+            </li>
+
+            <li class="nav-item">
+                <a href="#enviar-arquivo" class="nav-link" id="menu">
+                    <span class="icon-cloud"></span> Enviar arquivos
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span class="icon-logout"></span> Sair
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<main class="container-fluid">
+    <div class="col-lg-12">
+        <div id="home" class="content-dashboard">
+            <h3 class="mb-2 mt-0">Funcionários</h3>
+            <div class="table-responsive">
+                <table class="table table-hover" id="listaFuncionariosHome"></table>
+            </div>
+        </div>
+
+
+        <div id="gerenciar" class="content-dashboard">
+            <h3 class="mb-2 mt-0">Gerenciar Funcionários</h3>
+            <div class="add-employee mt-4 mb-5">
+                <h5>Cadastro de funcionário</h5>
+                <form id="form">
+                    <div class="form-row">
+                      <div class="col-12 col-lg-4 mb-3">
+                        <input type="text" name="nome" class="form-control" placeholder="Nome" id="nome" required="true">
+                    </div>
+                    <div class="col-12 col-lg-4 mb-3">
+                        <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" id="sobrenome" required="true">
+                    </div>
+                    <div class="col-12 col-lg-4 mb-3">
+                        <input type="text" class="form-control" placeholder="Cargo" id="cargo" required="true">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-12 col-lg-4 mb-3">
+                        <input type="text" class="form-control" placeholder="setor" id="setor" required="true">
+                    </div>
+                    <div class="col-12 col-lg-4 mb-3">
+                        <input type="text" class="form-control" placeholder="Tempo de empresa" id="tempoempresa" required="true">
+                    </div>
+                    <div class="col-12 col-lg-4 mb-3">
+                        <button type="submit" class="btn btn-cadastrar">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <h5>Funcionários cadastrados</h5>
+        <div class="table-responsive">
+            <table class="table table-hover" id="listaFuncionarios"></table>
+        </div>
+    </div>
+
+    <div id="enviar-arquivo" class="content-dashboard">
+        <h3 class="mb-3 mt-0">Enviar arquivo</h3>
+
+        <div id="fileup">
+          <label for="file" class="box-file">
+            <img src="assets/img/icons/file-upload.svg" alt="upload" title="upload">
+            <input type="file" class="fileup-input" multiple name="" id="file">
+            <span>Selecione os arquivos</span>
+        </label>
+
+        <div class="fileup-list"></div>
+
+    </div>
+</div>
+</div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/saveform.js"></script>
+<script src="assets/js/uploadfiles.js"></script>
+</body>
+</html>
